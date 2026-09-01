@@ -824,31 +824,31 @@ footer{
 
         <div class="news-grid">
 
-          <article class="news-card">
+          <article class="news-card" onclick="openNews(0)" style="cursor:pointer;">
 
-            <img
-              class="news-image"
-              src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80"
-              alt="News"
-            >
+  <img
+    class="news-image"
+    src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80"
+    alt="Harar"
+  >
 
-            <div class="news-body">
+  <div class="news-body">
 
-              <span class="category">
-                HARARI
-              </span>
+    <span class="category">
+      HARARI
+    </span>
 
-              <h3>
-                Harar City Administration announces new development projects
-              </h3>
+    <h3>
+      Harar City Administration announces new development projects
+    </h3>
 
-              <div class="date">
-                ◷ 2 hours ago
-              </div>
+    <div class="date">
+      ● 2 hours ago
+    </div>
 
-            </div>
+  </div>
 
-          </article>
+</article>
 
 
           <article class="news-card">
@@ -1256,6 +1256,96 @@ function setLanguage(lang) {
   }
 
   document.documentElement.lang = lang;
+} 
+  function openNews(index) {
+  if (index !== 0) return;
+
+  const lang = document.documentElement.lang || "en";
+
+  const articles = {
+    en: {
+      category: "HARARI",
+      title: "Harar City Administration announces new development projects",
+      text: "The Harar City Administration has announced new development projects aimed at improving services and supporting the city's continued development."
+    },
+    am: {
+      category: "ሐረሪ",
+      title: "የሐረር ከተማ አስተዳደር አዳዲስ የልማት ፕሮጀክቶችን አስታወቀ",
+      text: "የሐረር ከተማ አስተዳደር የከተማዋን አገልግሎቶች ለማሻሻል እና ልማቷን ለማስቀጠል ያለሙ አዳዲስ የልማት ፕሮጀክቶችን አስታውቋል።"
+    },
+    om: {
+      category: "HARARI",
+      title: "Bulchiinsi Magaalaa Harar pirojektoota misoomaa haaraa beeksise",
+      text: "Bulchiinsi Magaalaa Harar tajaajiloota magaalaa fooyyessuu fi misooma magaalaa cimsuuf pirojektoota misoomaa haaraa beeksise."
+    },
+    ha: {
+      category: "ሐረሪ",
+      title: "የሐረር ከተማ አስተዳደር አዲስ የልማት ስራዎችን አስታወቀ",
+      text: "የሐረር ከተማ አስተዳደር የከተማዋን አገልግሎት ለማሻሻል እና ልማቷን ለማጠናከር አዳዲስ የልማት ስራዎችን አስታውቋል።"
+    }
+  };
+
+  const article = articles[lang] || articles.en;
+
+  const modal = document.createElement("div");
+
+  modal.style.cssText = `
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  `;
+
+  modal.innerHTML = `
+    <div style="
+      background:white;
+      max-width:700px;
+      width:100%;
+      max-height:85vh;
+      overflow:auto;
+      border-radius:16px;
+      padding:25px;
+      color:#222;
+    ">
+      <button onclick="this.closest('div[style*=fixed]').remove()" style="
+        float:right;
+        border:0;
+        background:#eee;
+        border-radius:50%;
+        width:38px;
+        height:38px;
+        font-size:22px;
+        cursor:pointer;
+      ">×</button>
+
+      <div style="
+        color:#07883b;
+        font-weight:bold;
+        margin-bottom:10px;
+      ">${article.category}</div>
+
+      <h2 style="margin:0 0 15px;">
+        ${article.title}
+      </h2>
+
+      <div style="color:#777;margin-bottom:20px;">
+        HBN • Harari Broadcasting Network
+      </div>
+
+      <p style="
+        font-size:17px;
+        line-height:1.7;
+      ">
+        ${article.text}
+      </p>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
 }
 </script>
 
