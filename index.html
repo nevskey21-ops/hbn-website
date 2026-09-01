@@ -3,622 +3,1180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>HBN | Harari Broadcasting Network</title>
 
+<meta name="description" content="Harari Broadcasting Network - Voice of Truth, Vision of Harari">
+
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 body{
- margin:0;
- font-family:Arial,Helvetica,sans-serif;
- color:#14213d;
- background:#fff;
-}
-.top{
- background:#063d83;
- color:white;
- padding:9px 5%;
- font-size:12px;
- font-weight:bold;
- display:flex;
- justify-content:space-between;
-}
-.header{
- padding:18px 5%;
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:20px;
-}
-.brand{
- display:flex;
- align-items:center;
- gap:15px;
-}
-.logo{
- width:95px;
- height:95px;
- border-radius:50%;
- object-fit:cover;
-}
-.brand h1{
- margin:0;
- color:#064494;
- font-size:58px;
- line-height:.8;
-}
-.brand h2{
- margin:10px 0 0;
- color:#064494;
- font-size:20px;
-}
-.brand p{
- margin:5px 0 0;
- color:#e3131b;
- font-weight:bold;
-}
-.buttons{
- display:grid;
- gap:6px;
- width:220px;
-}
-.buttons button{
- border:0;
- padding:12px;
- border-radius:4px;
- color:white;
- font-weight:bold;
- cursor:pointer;
-}
-.red{background:#e3131b!important}
-.blue{background:#064494!important}
-.green{background:#15933a!important}
-
-nav{
- background:#064494;
- display:flex;
- align-items:center;
- padding:0 5%;
-}
-nav a{
- color:white;
- text-decoration:none;
- padding:17px 15px;
- font-weight:bold;
-}
-nav a:hover{background:#0a5aaa}
-
-.languages{
- margin-left:auto;
- display:flex;
- gap:4px;
-}
-.languages button{
- background:transparent;
- border:1px solid #ffffff66;
- color:white;
- padding:6px 9px;
- border-radius:4px;
-}
-.languages button.active{
- background:white;
- color:#064494;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fa;
+  color:#14213d;
+  line-height:1.5;
 }
 
-.breaking{
- margin:13px 5%;
- border:1px solid #ddd;
- display:flex;
- align-items:center;
- min-height:45px;
-}
-.breaking strong{
- background:#e3131b;
- color:white;
- padding:14px;
- white-space:nowrap;
-}
-.breaking span{
- padding:0 15px;
- white-space:nowrap;
- overflow:hidden;
- text-overflow:ellipsis;
-}
-
-.hero-area{
- margin:12px 5% 30px;
- display:grid;
- grid-template-columns:2fr 1fr;
- gap:14px;
-}
-.hero{
- height:370px;
- position:relative;
- overflow:hidden;
- border-radius:6px;
-}
-.hero img{
- width:100%;
- height:100%;
- object-fit:cover;
-}
-.overlay{
- position:absolute;
- inset:0;
- background:linear-gradient(transparent 20%,rgba(0,0,0,.9));
-}
-.hero-text{
- position:absolute;
- bottom:25px;
- left:25px;
- right:25px;
- color:white;
-}
-.hero-text small{
- background:#e3131b;
- padding:5px 8px;
- font-weight:bold;
-}
-.hero-text h2{
- font-size:32px;
- margin:12px 0;
-}
-.hero-text p{
- font-size:15px;
-}
-.hero-text button{
- background:#064494;
- color:white;
- border:0;
- padding:11px 18px;
- font-weight:bold;
-}
-
-.live-box{
- background:#073b61;
- color:white;
- padding:15px;
- border-radius:6px;
-}
-.live-title{
- font-size:21px;
- font-weight:bold;
- display:flex;
- justify-content:space-between;
-}
-.live-label{
- background:#e3131b;
- padding:4px 7px;
- font-size:11px;
-}
-.tv-screen{
- height:190px;
- margin:13px 0;
- background:radial-gradient(circle,#1971b9,#061d38);
- display:flex;
- justify-content:center;
- align-items:center;
- font-size:55px;
- font-weight:900;
-}
-.live-box button{
- width:100%;
- border:0;
- color:white;
- padding:12px;
- margin:5px 0;
- font-weight:bold;
- border-radius:4px;
+a{
+  text-decoration:none;
 }
 
 .container{
- margin:0 5%;
- display:grid;
- grid-template-columns:2fr 1fr;
- gap:28px;
-}
-.section-title{
- display:flex;
- justify-content:space-between;
- align-items:end;
- border-bottom:2px solid #e5e8ed;
- margin-bottom:15px;
-}
-.section-title h2{
- color:#064494;
- font-size:20px;
- margin:0;
- padding-bottom:7px;
- border-bottom:3px solid #e3131b;
-}
-.section-title span{
- color:#064494;
- font-size:12px;
- font-weight:bold;
+  width:92%;
+  max-width:1250px;
+  margin:auto;
 }
 
-.cards{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:15px;
-}
-.card img{
- width:100%;
- height:140px;
- object-fit:cover;
- border-radius:5px;
-}
-.card small{
- background:#064494;
- color:white;
- padding:4px 7px;
- display:inline-block;
- margin-top:7px;
- font-weight:bold;
-}
-.card h3{
- font-size:16px;
- line-height:1.3;
- margin:8px 0;
-}
-.card p{
- color:#777;
- font-size:12px;
-}
-
-.program-box{
- border:1px solid #ddd;
- border-radius:6px;
- padding:13px;
-}
-.program{
- display:grid;
- grid-template-columns:65px 25px 1fr;
- gap:8px;
- align-items:center;
- padding:11px 0;
- border-bottom:1px solid #eee;
- font-size:13px;
-}
-.program time{
- background:#064494;
- color:white;
- padding:8px 4px;
- text-align:center;
- font-size:11px;
- font-weight:bold;
- border-radius:3px;
-}
-.program span{
- color:#064494;
-}
-.program small{
- display:block;
- color:#888;
- margin-top:3px;
-}
-
-.categories{
- margin:35px 5%;
-}
-.category-grid{
- display:grid;
- grid-template-columns:repeat(8,1fr);
- gap:10px;
-}
-.category{
- border:1px solid #ddd;
- min-height:80px;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- gap:8px;
- border-radius:5px;
- color:#064494;
- font-weight:bold;
-}
-.category span{font-size:24px}
-
-footer{
- background:#064494;
- color:white;
- padding:22px 5%;
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-top:30px;
-}
-.footer-brand{
- display:flex;
- align-items:center;
- gap:12px;
-}
-.footer-brand img{
- width:55px;
- height:55px;
- border-radius:50%;
-}
-.footer-brand strong{
- font-size:30px;
-}
-.footer-brand span{
- font-size:14px;
- font-weight:bold;
-}
-
-@media(max-width:800px){
- .top{font-size:9px}
- .header{
-  flex-direction:column;
-  align-items:flex-start;
- }
- .brand h1{font-size:45px}
- .brand h2{font-size:13px}
- .logo{width:75px;height:75px}
- .buttons{
-  width:100%;
-  grid-template-columns:repeat(3,1fr);
- }
- nav{
-  overflow-x:auto;
-  padding:0 3%;
- }
- nav a{
-  padding:13px 10px;
+/* TOP BAR */
+.topbar{
+  background:#063d83;
+  color:#fff;
+  padding:8px 0;
   font-size:12px;
-  white-space:nowrap;
- }
- .languages{margin-left:5px}
- .hero-area,
- .container{
-  grid-template-columns:1fr;
-  margin-left:3%;
-  margin-right:3%;
- }
- .hero{height:320px}
- .hero-text h2{font-size:24px}
- .cards{grid-template-columns:1fr 1fr}
- .category-grid{grid-template-columns:repeat(4,1fr)}
- footer{
-  flex-direction:column;
-  align-items:flex-start;
+}
+
+.topbar-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  padding:18px 0;
+  border-bottom:1px solid #ddd;
+}
+
+.header-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
   gap:15px;
- }
+}
+
+.logo{
+  width:88px;
+  height:88px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.brand-name{
+  color:#064494;
+  font-size:55px;
+  font-weight:900;
+  line-height:.8;
+}
+
+.brand-title{
+  color:#064494;
+  font-size:18px;
+  font-weight:800;
+  margin-top:10px;
+}
+
+.tagline{
+  color:#e3131b;
+  font-weight:bold;
+  margin-top:4px;
+}
+
+.header-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  width:210px;
+}
+
+.btn{
+  border:0;
+  padding:11px;
+  border-radius:4px;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.red{
+  background:#e3131b;
+}
+
+.blue{
+  background:#064494;
+}
+
+.green{
+  background:#15933a;
+}
+
+/* NAVIGATION */
+nav{
+  background:#064494;
+}
+
+.nav-content{
+  display:flex;
+  align-items:center;
+}
+
+.nav-links{
+  display:flex;
+}
+
+.nav-links a{
+  color:#fff;
+  padding:16px 15px;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.nav-links a:hover{
+  background:#0b5bab;
+}
+
+.languages{
+  margin-left:auto;
+  display:flex;
+  gap:4px;
+}
+
+.languages button{
+  background:transparent;
+  color:#fff;
+  border:1px solid #ffffff66;
+  padding:6px 9px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.languages button.active{
+  background:#fff;
+  color:#064494;
+}
+
+/* BREAKING */
+.breaking{
+  margin:14px 0;
+  background:#fff;
+  border:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  min-height:45px;
+  overflow:hidden;
+}
+
+.breaking-label{
+  background:#e3131b;
+  color:#fff;
+  padding:13px 16px;
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.breaking-news{
+  padding:0 15px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* HERO */
+.hero-section{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.hero{
+  position:relative;
+  height:390px;
+  overflow:hidden;
+  border-radius:7px;
+  background:#111;
+}
+
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    transparent 15%,
+    rgba(0,0,0,.88) 100%
+  );
+}
+
+.hero-content{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:25px;
+  color:#fff;
+}
+
+.hero-label{
+  display:inline-block;
+  background:#e3131b;
+  padding:5px 9px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.hero-content h1{
+  font-size:32px;
+  line-height:1.15;
+  margin:12px 0;
+}
+
+.hero-content p{
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+/* LIVE */
+.live-panel{
+  background:#073b61;
+  border-radius:7px;
+  padding:16px;
+  color:#fff;
+}
+
+.live-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
+  font-size:19px;
+}
+
+.live-badge{
+  background:#e3131b;
+  padding:4px 8px;
+  font-size:10px;
+}
+
+.tv{
+  height:205px;
+  margin:15px 0;
+  background:radial-gradient(circle,#1673ba,#061b34);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border:4px solid #123957;
+}
+
+.tv span{
+  font-size:58px;
+  font-weight:900;
+  color:#fff;
+}
+
+/* SECTION */
+.section{
+  background:#fff;
+  padding:18px;
+  border-radius:7px;
+  margin-bottom:25px;
+}
+
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  border-bottom:2px solid #e6e9ed;
+  margin-bottom:18px;
+}
+
+.section-heading h2{
+  color:#064494;
+  font-size:21px;
+  border-bottom:3px solid #e3131b;
+  padding-bottom:7px;
+}
+
+.view-all{
+  color:#064494;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* MAIN GRID */
+.main-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:25px;
+}
+
+/* NEWS */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.news-card{
+  background:#fff;
+  border:1px solid #e1e5e9;
+  border-radius:6px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.news-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 18px rgba(0,0,0,.1);
+}
+
+.news-image{
+  width:100%;
+  height:145px;
+  object-fit:cover;
+}
+
+.news-body{
+  padding:11px;
+}
+
+.category{
+  display:inline-block;
+  background:#064494;
+  color:#fff;
+  padding:4px 7px;
+  font-size:10px;
+  font-weight:bold;
+}
+
+.news-card h3{
+  font-size:16px;
+  line-height:1.3;
+  margin:8px 0;
+}
+
+.date{
+  color:#888;
+  font-size:11px;
+}
+
+/* PROGRAMS */
+.program-box{
+  background:#fff;
+  border:1px solid #e1e5e9;
+  border-radius:7px;
+  padding:15px;
+}
+
+.program{
+  display:grid;
+  grid-template-columns:60px 20px 1fr;
+  align-items:center;
+  gap:7px;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.time{
+  background:#064494;
+  color:#fff;
+  padding:7px 3px;
+  text-align:center;
+  font-size:10px;
+  font-weight:bold;
+  border-radius:3px;
+}
+
+.program-dot{
+  color:#15933a;
+}
+
+.program-name{
+  font-size:13px;
+  font-weight:bold;
+}
+
+.program-description{
+  display:block;
+  color:#888;
+  font-size:10px;
+  margin-top:2px;
+}
+
+/* VIDEOS */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.video-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:6px;
+  background:#111;
+}
+
+.video-card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  opacity:.85;
+}
+
+.play{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:55px;
+  height:55px;
+  border:2px solid #fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:22px;
+}
+
+.video-title{
+  padding:10px;
+  color:#fff;
+  font-weight:bold;
+  font-size:14px;
+}
+
+/* CATEGORIES */
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:10px;
+}
+
+.category-box{
+  min-height:85px;
+  border:1px solid #ddd;
+  border-radius:5px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  color:#064494;
+  font-weight:bold;
+  font-size:11px;
+}
+
+.category-icon{
+  font-size:24px;
+}
+
+/* FOOTER */
+footer{
+  background:#063d83;
+  color:#fff;
+  margin-top:30px;
+  padding:28px 0;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-logo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+}
+
+.footer-hbn{
+  font-size:30px;
+  font-weight:900;
+}
+
+.footer-title{
+  font-size:13px;
+  font-weight:bold;
+}
+
+.footer-tagline{
+  color:#ffdddd;
+  font-size:11px;
+}
+
+.copyright{
+  font-size:11px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  .container{
+    width:94%;
+  }
+
+  .topbar-content{
+    justify-content:center;
+  }
+
+  .topbar-social{
+    display:none;
+  }
+
+  .header-content{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .logo{
+    width:72px;
+    height:72px;
+  }
+
+  .brand-name{
+    font-size:43px;
+  }
+
+  .brand-title{
+    font-size:12px;
+  }
+
+  .tagline{
+    font-size:10px;
+  }
+
+  .header-buttons{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .header-buttons .btn{
+    font-size:9px;
+    padding:9px 4px;
+  }
+
+  .nav-content{
+    overflow-x:auto;
+  }
+
+  .nav-links a{
+    padding:13px 10px;
+    font-size:11px;
+    white-space:nowrap;
+  }
+
+  .languages{
+    margin-left:8px;
+  }
+
+  .hero-section{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    height:330px;
+  }
+
+  .hero-content h1{
+    font-size:24px;
+  }
+
+  .main-grid{
+    grid-template-columns:1fr;
+  }
+
+  .news-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .footer-content{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
 @media(max-width:480px){
- .cards{grid-template-columns:1fr}
- .category-grid{grid-template-columns:repeat(2,1fr)}
+
+  .news-grid,
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-content{
+    left:18px;
+    right:18px;
+  }
+
+  .hero-content h1{
+    font-size:21px;
+  }
+
+  .breaking-label{
+    padding:12px 9px;
+    font-size:10px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="top">
- <span>WELCOME TO HARARI BROADCASTING NETWORK</span>
- <span>Facebook　YouTube　X　Instagram　Telegram</span>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-content">
+    <span>WELCOME TO HARARI BROADCASTING NETWORK</span>
+    <span class="topbar-social">Facebook　 YouTube　 X　 Instagram　 Telegram</span>
+  </div>
 </div>
 
-<header class="header">
+<!-- HEADER -->
+<header>
+  <div class="container header-content">
 
- <div class="brand">
-  <img class="logo" src="hbn-logo.jpg" alt="HBN Logo">
+    <div class="brand">
 
-  <div>
-   <h1>HBN</h1>
-   <h2>HARARI BROADCASTING NETWORK</h2>
-   <p>Voice of Truth, Vision of Harari</p>
+      <img
+        class="logo"
+        src="hbn-logo.jpg"
+        alt="HBN Logo"
+      >
+
+      <div>
+        <div class="brand-name">HBN</div>
+        <div class="brand-title">
+          HARARI BROADCASTING NETWORK
+        </div>
+        <div class="tagline">
+          Voice of Truth, Vision of Harari
+        </div>
+      </div>
+
+    </div>
+
+    <div class="header-buttons">
+      <button class="btn red">🔴 LIVE HBN</button>
+      <button class="btn blue">📺 WATCH LIVE TV</button>
+      <button class="btn green">📻 LIVE RADIO</button>
+    </div>
+
   </div>
- </div>
-
- <div class="buttons">
-  <button class="red">🔴 LIVE HBN</button>
-  <button class="blue">WATCH LIVE TV</button>
-  <button class="green">LISTEN LIVE RADIO</button>
- </div>
-
 </header>
 
+<!-- NAVIGATION -->
 <nav>
- <a href="#">HOME</a>
- <a href="#news">NEWS</a>
- <a href="#live">LIVE</a>
- <a href="#videos">VIDEOS</a>
- <a href="#programs">PROGRAMS</a>
- <a href="#about">ABOUT HBN</a>
- <a href="#contact">CONTACT</a>
+  <div class="container nav-content">
 
- <div class="languages">
-  <button class="active">EN</button>
-  <button>አማ</button>
-  <button>OM</button>
-  <button>HA</button>
- </div>
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="#news">NEWS</a>
+      <a href="#live">LIVE</a>
+      <a href="#videos">VIDEOS</a>
+      <a href="#programs">PROGRAMS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+
+    <div class="languages">
+      <button class="active">EN</button>
+      <button>አማ</button>
+      <button>OM</button>
+      <button>HA</button>
+    </div>
+
+  </div>
 </nav>
 
-<div class="breaking">
- <strong>BREAKING NEWS</strong>
- <span>Harari Regional State announces new development projects in Harar</span>
-</div>
-
-<section class="hero-area">
-
- <article class="hero">
-  <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1400&q=85">
-
-  <div class="overlay"></div>
-
-  <div class="hero-text">
-   <small>TOP STORY</small>
-
-   <h2>
-    Harari Regional State President Inaugurates Major Development Projects
-   </h2>
-
-   <p>
-    Latest news and important updates from Harar and the Harari Regional State.
-   </p>
-
-   <button>READ MORE</button>
-  </div>
- </article>
-
- <aside class="live-box" id="live">
-
-  <div class="live-title">
-   LIVE BROADCAST
-   <span class="live-label">LIVE</span>
-  </div>
-
-  <div class="tv-screen">HBN</div>
-
-  <h3>HBN TV Live</h3>
-  <p>Your Source of Information</p>
-
-  <button class="red">📡 WATCH LIVE TV</button>
-  <button class="green">📻 LISTEN LIVE RADIO</button>
-
- </aside>
-
-</section>
-
+<!-- PAGE -->
 <div class="container">
 
- <section id="news">
+  <!-- BREAKING NEWS -->
+  <div class="breaking">
 
-  <div class="section-title">
-   <h2>LATEST NEWS</h2>
-   <span>VIEW ALL ›</span>
-  </div>
+    <div class="breaking-label">
+      🔴 BREAKING NEWS
+    </div>
 
-  <div class="cards">
-
-   <article class="card">
-    <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80">
-    <small>HARARI</small>
-    <h3>Harar City Administration announces new beautification projects</h3>
-    <p>◷ 2 hours ago</p>
-   </article>
-
-   <article class="card">
-    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80">
-    <small>ETHIOPIA</small>
-    <h3>Ethiopia and Djibouti strengthen cooperation</h3>
-    <p>◷ 3 hours ago</p>
-   </article>
-
-   <article class="card">
-    <img src="https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=900&q=80">
-    <small>AFRICA</small>
-    <h3>African Union calls for unity and peace</h3>
-    <p>◷ 5 hours ago</p>
-   </article>
+    <div class="breaking-news">
+      Harari Regional State announces new development projects in Harar
+    </div>
 
   </div>
 
-  <div id="videos" class="section-title">
-   <h2>VIDEOS</h2>
-   <span>VIEW ALL ›</span>
+  <!-- HERO + LIVE -->
+  <section class="hero-section">
+
+    <article class="hero">
+
+      <img
+        src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1400&q=85"
+        alt="Harar"
+      >
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          TOP STORY
+        </span>
+
+        <h1>
+          Harari Regional State President Inaugurates Major Development Projects
+        </h1>
+
+        <p>
+          Latest news and important updates from Harar
+          and the Harari Regional State.
+        </p>
+
+        <button class="btn blue">
+          READ MORE →
+        </button>
+
+      </div>
+
+    </article>
+
+    <!-- LIVE PANEL -->
+    <aside class="live-panel" id="live">
+
+      <div class="live-heading">
+        HBN LIVE
+        <span class="live-badge">LIVE</span>
+      </div>
+
+      <div class="tv">
+        <span>HBN</span>
+      </div>
+
+      <h3>HBN Television</h3>
+
+      <p>
+        Your Source of Information
+      </p>
+
+      <br>
+
+      <button class="btn red">
+        📺 WATCH LIVE TV
+      </button>
+
+      <button class="btn green">
+        📻 LISTEN LIVE RADIO
+      </button>
+
+    </aside>
+
+  </section>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="main-grid">
+
+    <!-- LEFT -->
+    <div>
+
+      <!-- NEWS -->
+      <section class="section" id="news">
+
+        <div class="section-heading">
+          <h2>LATEST NEWS</h2>
+          <span class="view-all">VIEW ALL →</span>
+        </div>
+
+        <div class="news-grid">
+
+          <article class="news-card">
+
+            <img
+              class="news-image"
+              src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80"
+              alt="News"
+            >
+
+            <div class="news-body">
+
+              <span class="category">
+                HARARI
+              </span>
+
+              <h3>
+                Harar City Administration announces new development projects
+              </h3>
+
+              <div class="date">
+                ◷ 2 hours ago
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="news-card">
+
+            <img
+              class="news-image"
+              src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80"
+              alt="Ethiopia News"
+            >
+
+            <div class="news-body">
+
+              <span class="category">
+                ETHIOPIA
+              </span>
+
+              <h3>
+                Ethiopia strengthens regional cooperation and development
+              </h3>
+
+              <div class="date">
+                ◷ 3 hours ago
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="news-card">
+
+            <img
+              class="news-image"
+              src="https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=900&q=80"
+              alt="Africa News"
+            >
+
+            <div class="news-body">
+
+              <span class="category">
+                AFRICA
+              </span>
+
+              <h3>
+                African leaders discuss peace and economic cooperation
+              </h3>
+
+              <div class="date">
+                ◷ 5 hours ago
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- VIDEOS -->
+      <section class="section" id="videos">
+
+        <div class="section-heading">
+          <h2>HBN VIDEOS</h2>
+          <span class="view-all">VIEW ALL →</span>
+        </div>
+
+        <div class="video-grid">
+
+          <article class="video-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80"
+              alt="Video"
+            >
+
+            <div class="play">▶</div>
+
+            <div class="video-title">
+              Discover the beauty and history of Harar
+            </div>
+
+          </article>
+
+
+          <article class="video-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=80"
+              alt="Video"
+            >
+
+            <div class="play">▶</div>
+
+            <div class="video-title">
+              Harari Culture and Heritage
+            </div>
+
+          </article>
+
+
+          <article class="video-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?auto=format&fit=crop&w=900&q=80"
+              alt="Video"
+            >
+
+            <div class="play">▶</div>
+
+            <div class="video-title">
+              HBN Exclusive Interview
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- RIGHT PROGRAMS -->
+    <aside class="program-box" id="programs">
+
+      <div class="section-heading">
+        <h2>PROGRAMS</h2>
+      </div>
+
+      <div class="program">
+
+        <div class="time">
+          06:00
+        </div>
+
+        <div class="program-dot">
+          ●
+        </div>
+
+        <div class="program-name">
+          Early Morning News
+          <small class="program-description">
+            Daily News Update
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="program">
+
+        <div class="time">
+          08:00
+        </div>
+
+        <div class="program-dot">
+          ●
+        </div>
+
+        <div class="program-name">
+          HBN Breakfast Show
+          <small class="program-description">
+            Talk Show
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="program">
+
+        <div class="time">
+          11:00
+        </div>
+
+        <div class="program-dot">
+          ●
+        </div>
+
+        <div class="program-name">
+          Harari Focus
+          <small class="program-description">
+            Current Affairs
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="program">
+
+        <div class="time">
+          14:00
+        </div>
+
+        <div class="program-dot">
+          ●
+        </div>
+
+        <div class="program-name">
+          HBN News Bulletin
+          <small class="program-description">
+            Midday News
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="program">
+
+        <div class="time">
+          17:00
+        </div>
+
+        <div class="program-dot">
+          ●
+        </div>
+
+        <div class="program-name">
+          Harari Culture
+          <small class="program-description">
+            Culture & Heritage
+          </small>
+        </div>
+
+      </div>
+
+    </aside>
+
   </div>
 
-  <div class="cards">
 
-   <article class="card">
-    <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=80">
-    <h3>Discover the beauty of Harar City</h3>
-    <p>▶ Watch video</p>
-   </article>
+  <!-- CATEGORIES -->
+  <section class="section" style="margin-top:25px">
 
-   <article class="card">
-    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=80">
-    <h3>Harari Cultural Festival Highlights</h3>
-    <p>▶ Watch video</p>
-   </article>
+    <div class="section-heading">
+      <h2>NEWS BY CATEGORY</h2>
+    </div>
 
-   <article class="card">
-    <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?auto=format&fit=crop&w=900&q=80">
-    <h3>Exclusive HBN Interview</h3>
-    <p>▶ Watch video</p>
-   </article>
+    <div class="category-grid">
 
-  </div>
+      <div class="category-box">
+        <span class="category-icon">🏛️</span>
+        HARARI
+      </div>
 
- </section>
+      <div class="category-box">
+        <span class="category-icon">🇪🇹</span>
+        ETHIOPIA
+      </div>
 
- <aside class="program-box" id="programs">
+      <div class="category-box">
+        <span class="category-icon">🌍</span>
+        AFRICA
+      </div>
 
-  <div class="section-title">
-   <h2>PROGRAM SCHEDULE</h2>
-  </div>
+      <div class="category-box">
+        <span class="category-icon">🌎</span>
+        WORLD
+      </div>
 
-  <div class="program">
-   <time>06:00</time>
-   <span>●</span>
-   <div>Early Morning News<small>Daily News Update</small></div>
-  </div>
+      <div class="category-box">
+        <span class="category-icon">🏛️</span>
+        POLITICS
+      </div>
 
-  <div class="program">
-   <time>08:00</time>
-   <span>●</span>
-   <div>HBN Breakfast Show<small>Talk Show</small></div>
-  </div>
+      <div class="category-box">
+        <span class="category-icon">📈</span>
+        BUSINESS
+      </div>
 
-  <div class="program">
-   <time>11:00</time>
-   <span>●</span>
-   <div>Harari Focus<small>Current Affairs</small></div>
-  </div>
+      <div class="category-box">
+        <span class="category-icon">⚽</span>
+        SPORTS
+      </div>
 
-  <div class="program">
-   <time>14:00</time>
-   <span>●</span>
-   <div>HBN News Bulletin<small>Midday News</small></div>
-  </div>
+      <div class="category-box">
+        <span class="category-icon">🎭</span>
+        CULTURE
+      </div>
 
-  <div class="program">
-   <time>17:00</time>
-   <span>●</span>
-   <div>Harari Culture Program<small>Culture & Heritage</small></div>
-  </div>
+    </div>
 
- </aside>
+  </section>
 
 </div>
 
-<section class="categories">
 
- <div class="section-title">
-  <h2>NEWS BY CATEGORY</h2>
- </div>
-
- <div class="category-grid">
-
-  <div class="category"><span>🏛️</span>HARARI</div>
-  <div class="category"><span>🇪🇹</span>ETHIOPIA</div>
-  <div class="category"><span>🌍</span>AFRICA</div>
-  <div class="category"><span>🌎</span>WORLD</div>
-  <div class="category"><span>🏛️</span>POLITICS</div>
-  <div class="category"><span>📈</span>BUSINESS</div>
-  <div class="category"><span>⚽</span>SPORTS</div>
-  <div class="category"><span>🎭</span>CULTURE</div>
-
- </div>
-
-</section>
-
+<!-- FOOTER -->
 <footer id="contact">
 
- <div class="footer-brand">
-  <img src="hbn-logo.jpg">
-  <strong>HBN</strong>
-  <span>
-   HARARI BROADCASTING NETWORK<br>
-   Voice of Truth, Vision of Harari
-  </span>
- </div>
+  <div class="container footer-content">
 
- <div>© 2026 Harari Broadcasting Network</div>
+    <div class="footer-brand">
+
+      <img
+        class="footer-logo"
+        src="hbn-logo.jpg"
+        alt="HBN"
+      >
+
+      <div>
+        <div class="footer-hbn">
+          HBN
+        </div>
+
+        <div class="footer-title">
+          HARARI BROADCASTING NETWORK
+        </div>
+
+        <div class="footer-tagline">
+          Voice of Truth, Vision of Harari
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Harari Broadcasting Network
+      <br>
+      All Rights Reserved.
+    </div>
+
+  </div>
 
 </footer>
 
