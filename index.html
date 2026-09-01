@@ -715,10 +715,10 @@ footer{
     </div>
 
     <div class="languages">
-      <button class="active">EN</button>
-      <button>አማ</button>
-      <button>OM</button>
-      <button>HA</button>
+      <button class="active" onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('am')">አማ</button>
+<button onclick="setLanguage('om')">OM</button>
+<button onclick="setLanguage('ha')">HA</button>
     </div>
 
   </div>
@@ -1179,6 +1179,88 @@ footer{
   </div>
 
 </footer>
+  </footer>
+
+<script>
+const translations = {
+  en: {
+    home: "HOME",
+    news: "NEWS",
+    live: "LIVE",
+    videos: "VIDEOS",
+    programs: "PROGRAMS",
+    about: "ABOUT",
+    contact: "CONTACT",
+    latest: "LATEST NEWS",
+    categories: "NEWS BY CATEGORY",
+    hbnVideos: "HBN VIDEOS",
+    breaking: "BREAKING NEWS"
+  },
+
+  am: {
+    home: "መነሻ",
+    news: "ዜና",
+    live: "ቀጥታ",
+    videos: "ቪዲዮዎች",
+    programs: "ፕሮግራሞች",
+    about: "ስለ እኛ",
+    contact: "ያግኙን",
+    latest: "የቅርብ ጊዜ ዜና",
+    categories: "የዜና ምድቦች",
+    hbnVideos: "HBN ቪዲዮዎች",
+    breaking: "አስቸኳይ ዜና"
+  },
+
+  om: {
+    home: "FUULA JALQABAA",
+    news: "ODUU",
+    live: "KALLATTII",
+    videos: "VIIDIOO",
+    programs: "PROGRAMOOTA",
+    about: "WAA'EE KEENYA",
+    contact: "NU QUNNAMAA",
+    latest: "ODUU HAARAA",
+    categories: "RAMADDII ODUU",
+    hbnVideos: "VIIDIOO HBN",
+    breaking: "ODUU CITAANAA"
+  },
+
+  ha: {
+    home: "ጋር",
+    news: "ኸበር",
+    live: "ራዲዮ",
+    videos: "ቪዲዮ",
+    programs: "በርናሚጅ",
+    about: "ስለ",
+    contact: "ሒልቅቂ",
+    latest: "ሐጂስ",
+    categories: "ፈስሊ",
+    hbnVideos: "HBN ቪዲዮ",
+    breaking: "ሰበር"
+  }
+};
+
+function setLanguage(lang) {
+  const t = translations[lang];
+
+  const nav = document.querySelectorAll(".nav-links a");
+
+  if (nav.length >= 7) {
+    nav[0].textContent = t.home;
+    nav[1].textContent = t.news;
+    nav[2].textContent = t.live;
+    nav[3].textContent = t.videos;
+    nav[4].textContent = t.programs;
+    nav[5].textContent = t.about;
+    nav[6].textContent = t.contact;
+  }
+
+  document.documentElement.lang = lang;
+}
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
